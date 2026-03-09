@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mariam // portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="glitch" style="margin-bottom: 0.5px;" data-text="Mariam Anbar">Mariam Anbar</div>
+            BUILDING THINGS.<br>BREAKING THINGS. <br>CUZ CODE IS A RAW MATERIAL.
+            
+            <nav style="margin-top: 50px;">
+                <ul>
+                    <li><a onclick="switchSection('manifesto', this)">> MANIFESTO</a></li>
+                    <li><a onclick="switchSection('code', this)">> CODE_BASE</a></li>
+                    <li><a onclick="switchSection('cv', this)">> SYSTEM.LOG (CV)</a></li>
+                    <li><a onclick="switchSection('links', this)">> My Links</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="manifesto" class="section-content">
+                <div class="section-title">01 // MANIFESTO</div>
+                <p>I build robust back-end systems, piece together embedded hardware, and believe technology should serve a tangible purpose. Currently operating out of JUST. Navigating the space between <span class="highlight">Java/Spring Boot</span> architecture and raw hardware tinkering. I refuse to be defined by a single tech stack.</p>
+            </section>
+
+            <section id="code" class="section-content">
+                <div class="section-title">02 // CODE_BASE</div>
+                <div class="project-block">
+                    <h3 style="margin-top: 0; color: var(--glitch-cyan);">ESP32_Cheat_Detect</h3>
+                    <p>Graduation project. A decentralized hardware system utilizing ESP32S3s and a Raspberry Pi hub to monitor and flag academic dishonesty in real-time.</p>
+                    <div class="code-snippet">
+<pre>
+def analyze_sensor_data(stream):
+    if stream.detect_anomaly() > THRESHOLD:
+        flag_node(stream.id)
+        return alert_system()
+</pre>
+                    </div>
+                </div>
+
+                <div class="project-block">
+                    <h3 style="margin-top: 0; color: var(--glitch-magenta);">Bast_Space_Interactive</h3>
+                    <p>Designed and deployed an interactive digital environment for an Amman-based cat sanctuary.</p>
+                </div>
+
+                <div class="project-block">
+                    <h3 style="margin-top: 0; color: #aaa;">Archive_Experiments</h3>
+                    <p>Legacy builds including a Unity-based "Flapping Bird" clone and an Arduino robot.</p>
+                </div>
+            </section>
+
+             <section id="cv" class="section-content">
+                <div class="section-title">03 // SYSTEM.LOG</div>
+                <p>> CURRENT: Intern, Arab Bank (Development) -- [Concludes @ May 2026]</p>
+                <p>> EDUCATION: Software Engineering, JUST (GPA 3.98/4.2)</p>
+                <p>> DB_SKILLS: Oracle, SQL</p>
+                <p>> FRAMEWORKS: Spring Boot, Flask, MediaPipe, OpenCV</p>
+                <br>
+                <div class="section-title">04 // IMPACT_LOG</div>
+                <p>> Code doesn't exist in a vacuum. I've logged over <strong>250 hours</strong> with NAHNO,CTC.</p>
+            </section>
+
+            <section id="links" class="section-content">
+                <div class="section-title">05 // LINKS.LOG</div>
+                </section>
+        </main>
+
+        <footer>
+            SYS: <span class="status-blink">ACTIVE</span> // LOC: AMMAN, JORDAN
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
