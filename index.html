@@ -10,8 +10,10 @@
 
     <div class="container">
         <header>
-            <div class="glitch" style="margin-bottom: 0.5px;" data-text="Mariam Anbar">Mariam Anbar</div>
-            BUILDING THINGS.<br>BREAKING THINGS. <br>CUZ CODE IS A RAW MATERIAL.
+            <div class="glitch" style="margin-bottom: 0.5px; position: sticky; top: 0; z-index: 999; background-color: var(--bg-color); padding-bottom: 5px; width: 100%;" data-text="Mariam Anbar">Mariam Anbar</div>
+            <p>BUILDING THINGS &<br>BREAKING THINGS. <br>CUZ CODE IS A RAW MATERIAL.</p>
+
+            <div class="glitch-pic img-mobile" style="--img: url('assets/profile.jpeg');"></div>
             
             <nav style="margin-top: 50px;">
                 <ul>
@@ -27,16 +29,20 @@
             <section id="manifesto" class="section-content">
                 <div class="section-title">01 // MANIFESTO</div>
                 <p>I build robust back-end systems, piece together embedded hardware, and believe technology should serve a tangible purpose. Currently operating out of JUST. Navigating the space between <span class="highlight">Java/Spring Boot</span> architecture and raw hardware tinkering. I refuse to be defined by a single tech stack.</p>
+                
+                <div class="glitch-pic img-desktop" style="--img: url('assets/profile.jpeg');"></div>
             </section>
 
             <section id="code" class="section-content">
                 <div class="section-title">02 // CODE_BASE</div>
+
                 <div class="project-block">
                     <h3 style="margin-top: 0; color: var(--glitch-cyan);">ESP32_Cheat_Detect</h3>
-                    <p>Graduation project. A decentralized hardware system utilizing ESP32S3s and a Raspberry Pi hub to monitor and flag academic dishonesty in real-time.</p>
+                    <p>Graduation project. A decentralized hardware system utilizing ESP32S3s and a Raspberry Pi hub to monitor and flag academic dishonesty in real-time. Bridging Python, C++, and localized networking protocols.</p>
                     <div class="code-snippet">
 <pre>
 def analyze_sensor_data(stream):
+    # RPi processing hub active
     if stream.detect_anomaly() > THRESHOLD:
         flag_node(stream.id)
         return alert_system()
@@ -46,34 +52,38 @@ def analyze_sensor_data(stream):
 
                 <div class="project-block">
                     <h3 style="margin-top: 0; color: var(--glitch-magenta);">Bast_Space_Interactive</h3>
-                    <p>Designed and deployed an interactive digital environment for an Amman-based cat sanctuary.</p>
+                    <p>Designed and deployed an interactive digital environment for an Amman-based cat sanctuary. Full-stack execution utilizing HTML, CSS, and JS to translate physical spaces into digital experiences.</p>
                 </div>
 
                 <div class="project-block">
                     <h3 style="margin-top: 0; color: #aaa;">Archive_Experiments</h3>
-                    <p>Legacy builds including a Unity-based "Flapping Bird" clone and an Arduino robot.</p>
+                    <p>Legacy builds including a Unity-based "Flapping Bird" clone and an Arduino line-following / obstacle-avoidance robot. Where the muscle memory was built.</p>
                 </div>
             </section>
 
              <section id="cv" class="section-content">
                 <div class="section-title">03 // SYSTEM.LOG</div>
-                <p>> CURRENT: Intern, Arab Bank (Development) -- [Concludes @ May 2026]</p>
+                <p>> CURRENT: Intern, Arab Bank (Development) -- [Concludes @ April 2026]</p>
                 <p>> EDUCATION: Software Engineering, JUST (GPA 3.98/4.2)</p>
                 <p>> DB_SKILLS: Oracle, SQL</p>
                 <p>> FRAMEWORKS: Spring Boot, Flask, MediaPipe, OpenCV</p>
                 <br>
                 <div class="section-title">04 // IMPACT_LOG</div>
-                <p>> Code doesn't exist in a vacuum. I've logged over <strong>250 hours</strong> with NAHNO,CTC.</p>
+                <p>> Code doesn't exist in a vacuum. I've logged over <strong>250 hours</strong> with NAHNO,CTC—running 
+                    charity drives and supporting orphanages. True engineering solves human problems, and community 
+                    service is the ultimate UX research.</p>
             </section>
 
             <section id="links" class="section-content">
                 <div class="section-title">05 // LINKS.LOG</div>
-                </section>
+
+            </section>
         </main>
 
         <footer>
-            SYS: <span class="status-blink">ACTIVE</span> // LOC: AMMAN, JORDAN
+        SYS: <span class="status-blink">ACTIVE</span> // LOC: AMMAN, JORDAN
         </footer>
+
     </div>
 
     <script src="script.js"></script>

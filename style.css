@@ -29,6 +29,7 @@ body {
     margin: 0 auto;
 }
 
+/* Glitch Text Effect */
 .glitch {
     font-size: 3rem;
     font-weight: bold;
@@ -79,8 +80,60 @@ body {
     100% { clip-path: inset(40% 0 30% 0); }
 }
 
-nav ul { list-style: none; padding: 0; }
-nav li { margin-bottom: 15px; }
+/* --- GLITCH IMAGE EFFECT --- */
+.glitch-pic {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    filter:  contrast(1.2);
+}
+
+.glitch-pic::before, .glitch-pic::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.glitch-pic::before {
+    left: 4px;
+    background-color: var(--glitch-magenta);
+    background-blend-mode: screen;
+    animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+}
+
+.glitch-pic::after {
+    left: -4px;
+    background-color: var(--glitch-cyan);
+    background-blend-mode: screen;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+/* Visibility classes for responsive layout */
+.img-desktop {
+    display: block;
+    margin-top: 40px;
+}
+.img-mobile {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 15px;
+}
+
 nav a {
     color: var(--text-main);
     text-decoration: none;
@@ -107,12 +160,15 @@ nav a:hover, nav a.active-link {
     padding-bottom: 5px;
 }
 
+/* Logic for hiding and showing sections */
 .section-content {
     display: none;
     animation: fadeIn 0.4s ease-out forwards;
 }
 
-.section-content.active { display: block; }
+.section-content.active {
+    display: block;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -127,7 +183,9 @@ nav a:hover, nav a.active-link {
     transition: border 0.3s;
 }
 
-.project-block:hover { border-color: var(--glitch-cyan); }
+.project-block:hover {
+    border-color: var(--glitch-cyan);
+}
 
 .code-snippet {
     font-size: 0.8rem;
@@ -137,6 +195,10 @@ nav a:hover, nav a.active-link {
     border-left: 3px solid var(--glitch-magenta);
     margin-top: 15px;
     overflow-x: auto;
+}
+
+p {
+    font-size: 0.95rem;
 }
 
 .highlight {
@@ -159,8 +221,23 @@ footer {
     color: #666;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .container { grid-template-columns: 1fr; }
-    body { padding: 20px; }
-    footer { position: static; margin-top: 40px; }
+    .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    nav {
+        border-right: none;
+        border-bottom: 1px solid #333;
+        padding-bottom: 2rem;
+    }
+    /* Toggle Image Visibility */
+    .img-desktop {
+        display: none;
+    }
+    .img-mobile {
+        display: block;
+        margin-top: 30px;
+    }
 }
