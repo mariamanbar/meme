@@ -249,7 +249,6 @@ body {
     margin: 0 auto;
 }
 
-/* Glitch Text Effect */
 .glitch {
     font-size: 3rem;
     font-weight: bold;
@@ -300,7 +299,6 @@ body {
     100% { clip-path: inset(40% 0 30% 0); }
 }
 
-/* --- GLITCH IMAGE EFFECT --- */
 .glitch-pic {
     position: relative;
     width: 100%;
@@ -336,7 +334,6 @@ body {
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
-/* Visibility classes for responsive layout */
 .img-desktop {
     display: block;
     margin-top: 40px;
@@ -380,7 +377,6 @@ nav a:hover, nav a.active-link {
     padding-bottom: 5px;
 }
 
-/* Logic for hiding and showing sections */
 .section-content {
     display: none;
     animation: fadeIn 0.4s ease-out forwards;
@@ -441,7 +437,6 @@ footer {
     color: #666;
 }
 
-/* Responsive */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
@@ -465,9 +460,8 @@ footer {
                 margin-top: 30px;
             }
 
-            /* --- ADD THIS NEW RULE FOR MOBILE GLITCH TEXT --- */
             .glitch {
-                font-size: 2.2rem; /* Shrinks the text slightly */
-                white-space: nowrap; /* Forces it to stay on one line */
+                font-size: 2.2rem; 
+                white-space: nowrap;
             }
         }
