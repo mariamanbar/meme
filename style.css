@@ -29,6 +29,226 @@ body {
     margin: 0 auto;
 }
 
+.glitch {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--glitch-magenta);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--glitch-cyan);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(20% 0 80% 0); }
+    20% { clip-path: inset(60% 0 10% 0); }
+    40% { clip-path: inset(40% 0 50% 0); }
+    60% { clip-path: inset(80% 0 5% 0); }
+    80% { clip-path: inset(10% 0 70% 0); }
+    100% { clip-path: inset(30% 0 20% 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(10% 0 60% 0); }
+    20% { clip-path: inset(30% 0 20% 0); }
+    40% { clip-path: inset(70% 0 10% 0); }
+    60% { clip-path: inset(20% 0 50% 0); }
+    80% { clip-path: inset(90% 0 5% 0); }
+    100% { clip-path: inset(40% 0 30% 0); }
+}
+
+.glitch-pic {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    filter:  contrast(1.2);
+}
+
+.glitch-pic::before, .glitch-pic::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.glitch-pic::before {
+    left: 4px;
+    background-color: var(--glitch-magenta);
+    background-blend-mode: screen;
+    animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+}
+
+.glitch-pic::after {
+    left: -4px;
+    background-color: var(--glitch-cyan);
+    background-blend-mode: screen;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+/* Visibility classes for responsive layout */
+.img-desktop {
+    display: block;
+    margin-top: 40px;
+}
+.img-mobile {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 15px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+nav a:hover, nav a.active-link {
+    color: var(--glitch-cyan);
+    border-bottom: 1px solid var(--glitch-magenta);
+    text-shadow: 2px 0px var(--glitch-magenta);
+}
+
+.section-title {
+    color: #777;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 5px;
+}
+
+.section-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.section-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-block {
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border 0.3s;
+}
+
+.project-block:hover {
+    border-color: var(--glitch-cyan);
+}
+
+.code-snippet {
+    font-size: 0.8rem;
+    color: #888;
+    background: #000;
+    padding: 10px;
+    border-left: 3px solid var(--glitch-magenta);
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+p {
+    font-size: 0.95rem;
+}
+
+.highlight {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    padding: 0 4px;
+}
+
+.status-blink {
+    animation: blink 1s step-end infinite;
+    color: #0f0;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+footer {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+:root {
+    --bg-color: #0d0d0d;
+    --text-main: #f0f0f0;
+    --glitch-cyan: #0ff;
+    --glitch-magenta: #f0f;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    margin: 0;
+    padding: 40px;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+::selection {
+    background: var(--glitch-cyan);
+    color: #000;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* Glitch Text Effect */
 .glitch {
     font-size: 3rem;
@@ -222,22 +442,32 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    nav {
-        border-right: none;
-        border-bottom: 1px solid #333;
-        padding-bottom: 2rem;
-    }
-    /* Toggle Image Visibility */
-    .img-desktop {
-        display: none;
-    }
-    .img-mobile {
-        display: block;
-        margin-top: 30px;
-    }
-}
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            header {
+                top: 0; 
+                padding: 20px 0; 
+                margin-top: -20px;
+                border-bottom: 1px dashed #333;
+            }
+            nav {
+                border-right: none;
+                padding-bottom: 0;
+            }
+            .img-desktop {
+                display: none;
+            }
+            .img-mobile {
+                display: block;
+                margin-top: 30px;
+            }
+
+            /* --- ADD THIS NEW RULE FOR MOBILE GLITCH TEXT --- */
+            .glitch {
+                font-size: 2.2rem; /* Shrinks the text slightly */
+                white-space: nowrap; /* Forces it to stay on one line */
+            }
+        }
